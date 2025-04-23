@@ -28,8 +28,8 @@ namespace Customer.OrderCloud.Common.Models
 	public class ExtendedOrderWithXp : ExtendedOrder<OrderXp, LineItemWithXp, UserWithXp, AddressWithXp> { }
 	public class SupplierOrderWithXp : Order<OrderXp, AdminUserWithXp, ShipFromAddressWithXp> { }
 	public class SupplierExtendedOrderWithXp : ExtendedOrder<OrderXp, LineItemWithXp, AdminUserWithXp, ShipFromAddressWithXp> { }
-	public class OrderWorksheetWithXp : OrderWorksheet<OrderWithXp, LineItemWithXp, OrderPromotionWithXp, ShipEstimateResponseWithXp, OrderCalculateResponseWithXp, OrderSubmitResponseWithXp, OrderSubmitForApprovalResponseWithXp, OrderApprovedResponseWithXp> { }
-	public class SupplierOrderWorksheetWithXp : OrderWorksheet<SupplierOrderWithXp, LineItemWithXp, OrderPromotionWithXp, ShipEstimateResponseWithXp, OrderCalculateResponseWithXp, OrderSubmitResponseWithXp, OrderSubmitForApprovalResponseWithXp, OrderApprovedResponseWithXp> { }
+	public class OrderWorksheetWithXp : OrderWorksheet<OrderWithXp, LineItemWithXp, OrderPromotionWithXp, SubscriptionWithXp, ShipEstimateResponseWithXp, OrderCalculateResponseWithXp, OrderSubmitResponseWithXp, OrderSubmitForApprovalResponseWithXp, OrderApprovedResponseWithXp, SubscriptionIntegrationResponseWithXp> { }
+	public class SupplierOrderWorksheetWithXp : OrderWorksheet<SupplierOrderWithXp, LineItemWithXp, OrderPromotionWithXp, SubscriptionWithXp, ShipEstimateResponseWithXp, OrderCalculateResponseWithXp, OrderSubmitResponseWithXp, OrderSubmitForApprovalResponseWithXp, OrderApprovedResponseWithXp, SubscriptionIntegrationResponseWithXp> { }
 	public class OrderSplitResultWithXp : OrderSplitResult<SupplierOrderWithXp> { }
 	public class UserGroupWithXp : UserGroup<UserGroupXp> { }
 	public class SupplierUserGroupWithXp : UserGroup<SupplierUserGroupXp> { }
@@ -55,6 +55,8 @@ namespace Customer.OrderCloud.Common.Models
 	public class OrderReturnWithXp : OrderReturn<OrderReturnXp> { }
 	public class SupplierOrderReturnApprovalWithXp : OrderReturnApproval<SupplierUserWithXp> { }
 	public class AdminOrderReturnApprovalWithXp : OrderReturnApproval<AdminUserWithXp> { }
+	public class SubscriptionIntegrationResponseWithXp : SubscriptionIntegrationResponse<SubscriptionIntegrationResponseXp> { }
+	public class SubscriptionWithXp : Subscription<SubscriptionXp> { }
 	public class SupplierWithXp : Supplier<SupplierXp> { }
 	public class ProductSupplierWithXp : ProductSupplier<SupplierXp> { }
 	public class ProductCollectionWithXp : ProductCollection<ProductCollectionXp> { }
@@ -86,7 +88,7 @@ namespace Customer.OrderCloud.Common.Models
 	public class AddToCartResponseWithXp : AddToCartResponse<AdHocProductWithXp> { }
 	public class OrderMessageSenderPayloadWithXp : OrderMessageSenderPayload<MessageSenderXp, UserWithXp, OrderWithXp, OrderApprovalWithXp, LineItemWithXp, ProductWithXp> { }
 	public class OrderReturnMessageSenderPayloadWithXp : OrderReturnMessageSenderPayload<MessageSenderXp, UserWithXp, OrderWithXp, OrderApprovalWithXp, LineItemWithXp, ProductWithXp, OrderReturnWithXp> { }
-	public class SetPasswordMessageSenderPayloadWithXp: SetPasswordMessageSenderPayload<MessageSenderXp, UserWithXp> { }
+	public class SetPasswordMessageSenderPayloadWithXp : SetPasswordMessageSenderPayload<MessageSenderXp, UserWithXp> { }
 	public class ShipmentCreatedMessageSenderPayloadWithXp : ShipmentCreatedMessageSenderPayload<MessageSenderXp, UserWithXp, OrderWithXp, OrderApprovalWithXp, LineItemWithXp, ProductWithXp, ShipmentWithXp, ShipmentItemWithXp> { }
 	#endregion
 
@@ -128,6 +130,8 @@ namespace Customer.OrderCloud.Common.Models
 	public partial class PaymentXp { }
 	public partial class PaymentTransactionXp { }
 	public partial class SpendingAccountXp { }
+	public partial class SubscriptionXp { }
+	public partial class SubscriptionIntegrationResponseXp { }
 	public partial class PriceScheduleXp { }
 	public partial class ProductFacetXp { }
 	public partial class MessageSenderXp { }
